@@ -22,7 +22,7 @@ const Clock = ({ timezone, zone, secondRatio, minuteRatio, hourRatio }) => {
         <div className="number number12"><div>12</div></div>
       </div>
       <div className="num-wrapper">
-        <div className="num-clock">{(((hourRatio * 12) + (timezone / 60)) + Number(zone) < (10)) ? <div>0{((hourRatio * 12) + (timezone / 60)) + Number(zone)}</div> : (((hourRatio * 12) + (timezone / 60)) + Number(zone))}:{((minuteRatio * 60) === 31.000000000000004) ? (31) : ((minuteRatio * 60) < (10)) ? <div>0{(minuteRatio * 60)}</div> : (minuteRatio * 60)}:{((secondRatio * 60) === 31.000000000000004) ? (31) : ((secondRatio * 60) < (10)) ? <div>0{(secondRatio * 60)}</div> : (secondRatio * 60)}</div>
+        <div className="num-clock">{(((hourRatio * 12) + (timezone / 60)) + Number(zone) < (10)) ? <div>0{((hourRatio * 12) + (timezone / 60)) + Number(zone)}</div> : ((((hourRatio * 12) + (timezone / 60)) + Number(zone)) > (23) ) ? ((((hourRatio * 12) + (timezone / 60)) + Number(zone)) - (24)) : (((hourRatio * 12) + (timezone / 60)) + Number(zone))}:{((minuteRatio * 60) === 31.000000000000004) ? (31) : ((minuteRatio * 60) < (10)) ? <div>0{(minuteRatio * 60)}</div> : (minuteRatio * 60)}:{((secondRatio * 60) === 31.000000000000004) ? (31) : ((secondRatio * 60) < (10)) ? <div>0{(secondRatio * 60)}</div> : (secondRatio * 60)}</div>
       </div>
     </>
   );
